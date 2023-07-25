@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://deo6paroi158x"]
+
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="1_xqguj"]
+[ext_resource type="Theme" uid="uid://bvug006evisg" path="res://Scenes/label_theme.tres" id="2_k22mm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc41i"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_xqguj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LifeCountLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_k22mm")
+text = "1 UP"
+
+[node name="GameScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_k22mm")
+text = "SCORE: 0"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/CenterContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uc41i")
+
+[node name="GameLabel" type="Label" parent="MarginContainer/CenterContainer/Panel"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_k22mm")
+text = "Game won!"
+vertical_alignment = 1
