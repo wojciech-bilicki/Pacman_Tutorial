@@ -407,9 +407,8 @@ pacman_death_sound_player = NodePath("../SoundPlayers/PacmanDeathSoundPlayer")
 pellets_manager = NodePath("../Pellets")
 ui = NodePath("../UI")
 
-[node name="Pellets" type="Node" parent="." node_paths=PackedStringArray("ghost_array")]
+[node name="Pellets" type="Node" parent="."]
 script = ExtResource("3_0j36a")
-ghost_array = [NodePath("../Ghosts/RedGhost"), NodePath("../Ghosts/YellowGhost"), NodePath("../Ghosts/PinkGhost"), NodePath("../Ghosts/BlueGhost")]
 
 [node name="Pellet" parent="Pellets" instance=ExtResource("3_kgao6")]
 position = Vector2(-180, -1)
