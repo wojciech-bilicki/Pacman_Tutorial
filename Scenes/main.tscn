@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://55kl0m2si7xr" path="res://Resources/pink_movement_targets.tres" id="12_i2s7u"]
 [ext_resource type="Texture2D" uid="uid://bwh3pnp6rcycn" path="res://Assets/Ghost/Ghost_Body_01.png" id="12_lfsce"]
 [ext_resource type="Resource" uid="uid://btnd8y7rwy21n" path="res://Resources/blue_movement_targets.tres" id="12_v3cil"]
-[ext_resource type="AudioStream" uid="uid://bu756i3lh25h3" path="res://Assets/Sounds/pacman_chomp.wav" id="16_y86eu"]
+[ext_resource type="AudioStream" uid="uid://b330053mkx061" path="res://Assets/Sounds/waka.ogg" id="17_vrext"]
 [ext_resource type="AudioStream" uid="uid://100ohtpyo02o" path="res://Assets/Sounds/pacman_eatghost.wav" id="17_yqn4y"]
 [ext_resource type="AudioStream" uid="uid://c4b0pvuyylv4a" path="res://Assets/Sounds/pacman_power_pellet.wav" id="18_knqg5"]
 [ext_resource type="AudioStream" uid="uid://bnxugtt2eriq0" path="res://Assets/Sounds/pacman_death.wav" id="19_u6htk"]
@@ -407,9 +407,8 @@ pacman_death_sound_player = NodePath("../SoundPlayers/PacmanDeathSoundPlayer")
 pellets_manager = NodePath("../Pellets")
 ui = NodePath("../UI")
 
-[node name="Pellets" type="Node" parent="." node_paths=PackedStringArray("ghost_array")]
+[node name="Pellets" type="Node" parent="."]
 script = ExtResource("3_0j36a")
-ghost_array = [NodePath("../Ghosts/RedGhost"), NodePath("../Ghosts/YellowGhost"), NodePath("../Ghosts/PinkGhost"), NodePath("../Ghosts/BlueGhost")]
 
 [node name="Pellet" parent="Pellets" instance=ExtResource("3_kgao6")]
 position = Vector2(-180, -1)
@@ -1684,7 +1683,7 @@ script = ExtResource("11_oco4g")
 [node name="SoundPlayers" type="Node" parent="."]
 
 [node name="ChompSoundPlayer" type="AudioStreamPlayer2D" parent="SoundPlayers"]
-stream = ExtResource("16_y86eu")
+stream = ExtResource("17_vrext")
 
 [node name="EatGhostSoundPlayer" type="AudioStreamPlayer2D" parent="SoundPlayers"]
 stream = ExtResource("17_yqn4y")

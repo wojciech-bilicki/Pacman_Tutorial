@@ -45,22 +45,28 @@ func _physics_process(delta):
 	
 	velocity = movement_direction * speed
 	move_and_slide()
+	set_direction()
 	
-
+func set_direction():
+	if velocity.y > 0:
+		rotation_degrees = 270
+	elif velocity.y < 0:
+		rotation_degrees = 90
+	elif velocity.x > 0:
+		rotation_degrees = 180
+	elif velocity.x < 0:
+		rotation_degrees = 0
+	
 func get_input():
-	
 	if Input.is_action_pressed("left"):
 		next_movement_direction = Vector2.LEFT
-		rotation_degrees = 0
 	elif  Input.is_action_pressed("right"):
 		next_movement_direction = Vector2.RIGHT
-		rotation_degrees = 180
 	elif Input.is_action_pressed("down"):
 		next_movement_direction = Vector2.DOWN
-		rotation_degrees = 270
 	elif Input.is_action_pressed("up"):
 		next_movement_direction = Vector2.UP
-		rotation_degrees = 90
+
 
 func can_move_in_direction(dir: Vector2, delta: float) -> bool:
 	shape_query.transform = global_transform.translated(dir * speed * delta * 2)
